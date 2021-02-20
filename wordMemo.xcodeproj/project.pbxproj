@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F383A75CE5C9FB4C546A177 /* Pods_wordMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC03FBB1F1D970CFAFACBF1 /* Pods_wordMemo.framework */; };
 		E8A7F05C25D7D57E002487B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F05B25D7D57E002487B1 /* AppDelegate.swift */; };
 		E8A7F05E25D7D57E002487B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F05D25D7D57E002487B1 /* SceneDelegate.swift */; };
 		E8A7F06025D7D57E002487B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F05F25D7D57E002487B1 /* ViewController.swift */; };
@@ -15,6 +16,10 @@
 		E8A7F06825D7D587002487B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A7F06625D7D587002487B1 /* LaunchScreen.storyboard */; };
 		E8A7F07325D7D587002487B1 /* wordMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F07225D7D587002487B1 /* wordMemoTests.swift */; };
 		E8A7F07E25D7D587002487B1 /* wordMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F07D25D7D587002487B1 /* wordMemoUITests.swift */; };
+		E8A7F08F25D7D954002487B1 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F08E25D7D954002487B1 /* Realm.swift */; };
+		E8A7F09D25D7E3DD002487B1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F09C25D7E3DD002487B1 /* TableViewController.swift */; };
+		E8A7F0A325E11FB4002487B1 /* wordCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F0A125E11FB3002487B1 /* wordCountTableViewCell.swift */; };
+		E8A7F0A425E11FB4002487B1 /* wordCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A7F0A225E11FB3002487B1 /* wordCountTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66BA86728692CAA8C9C1B4CB /* Pods-wordMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wordMemo.debug.xcconfig"; path = "Target Support Files/Pods-wordMemo/Pods-wordMemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6AC03FBB1F1D970CFAFACBF1 /* Pods_wordMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wordMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACDFBF7295F2A3A80FB70DF6 /* Pods-wordMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wordMemo.release.xcconfig"; path = "Target Support Files/Pods-wordMemo/Pods-wordMemo.release.xcconfig"; sourceTree = "<group>"; };
 		E8A7F05825D7D57E002487B1 /* wordMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A7F05B25D7D57E002487B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8A7F05D25D7D57E002487B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		E8A7F07925D7D587002487B1 /* wordMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wordMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A7F07D25D7D587002487B1 /* wordMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordMemoUITests.swift; sourceTree = "<group>"; };
 		E8A7F07F25D7D587002487B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8A7F08E25D7D954002487B1 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		E8A7F09C25D7E3DD002487B1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E8A7F0A125E11FB3002487B1 /* wordCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordCountTableViewCell.swift; sourceTree = "<group>"; };
+		E8A7F0A225E11FB3002487B1 /* wordCountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = wordCountTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F383A75CE5C9FB4C546A177 /* Pods_wordMemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +89,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D3D94913737676943D43CB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66BA86728692CAA8C9C1B4CB /* Pods-wordMemo.debug.xcconfig */,
+				ACDFBF7295F2A3A80FB70DF6 /* Pods-wordMemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C2F4997C192235BF92CD77D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AC03FBB1F1D970CFAFACBF1 /* Pods_wordMemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E8A7F04F25D7D57D002487B1 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +113,8 @@
 				E8A7F07125D7D587002487B1 /* wordMemoTests */,
 				E8A7F07C25D7D587002487B1 /* wordMemoUITests */,
 				E8A7F05925D7D57E002487B1 /* Products */,
+				7D3D94913737676943D43CB2 /* Pods */,
+				C2F4997C192235BF92CD77D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,10 +134,14 @@
 				E8A7F05B25D7D57E002487B1 /* AppDelegate.swift */,
 				E8A7F05D25D7D57E002487B1 /* SceneDelegate.swift */,
 				E8A7F05F25D7D57E002487B1 /* ViewController.swift */,
+				E8A7F09C25D7E3DD002487B1 /* TableViewController.swift */,
+				E8A7F08E25D7D954002487B1 /* Realm.swift */,
 				E8A7F06125D7D57E002487B1 /* Main.storyboard */,
 				E8A7F06425D7D587002487B1 /* Assets.xcassets */,
 				E8A7F06625D7D587002487B1 /* LaunchScreen.storyboard */,
 				E8A7F06925D7D587002487B1 /* Info.plist */,
+				E8A7F0A125E11FB3002487B1 /* wordCountTableViewCell.swift */,
+				E8A7F0A225E11FB3002487B1 /* wordCountTableViewCell.xib */,
 			);
 			path = wordMemo;
 			sourceTree = "<group>";
@@ -135,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8A7F08225D7D587002487B1 /* Build configuration list for PBXNativeTarget "wordMemo" */;
 			buildPhases = (
+				83082384E7FBE29B941302B1 /* [CP] Check Pods Manifest.lock */,
 				E8A7F05425D7D57E002487B1 /* Sources */,
 				E8A7F05525D7D57E002487B1 /* Frameworks */,
 				E8A7F05625D7D57E002487B1 /* Resources */,
+				F41D2A23301E1BAC116942F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +272,7 @@
 				E8A7F06825D7D587002487B1 /* LaunchScreen.storyboard in Resources */,
 				E8A7F06525D7D587002487B1 /* Assets.xcassets in Resources */,
 				E8A7F06325D7D57E002487B1 /* Main.storyboard in Resources */,
+				E8A7F0A425E11FB4002487B1 /* wordCountTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +292,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		83082384E7FBE29B941302B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wordMemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F41D2A23301E1BAC116942F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wordMemo/Pods-wordMemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wordMemo/Pods-wordMemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wordMemo/Pods-wordMemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E8A7F05425D7D57E002487B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +342,9 @@
 				E8A7F06025D7D57E002487B1 /* ViewController.swift in Sources */,
 				E8A7F05C25D7D57E002487B1 /* AppDelegate.swift in Sources */,
 				E8A7F05E25D7D57E002487B1 /* SceneDelegate.swift in Sources */,
+				E8A7F0A325E11FB4002487B1 /* wordCountTableViewCell.swift in Sources */,
+				E8A7F09D25D7E3DD002487B1 /* TableViewController.swift in Sources */,
+				E8A7F08F25D7D954002487B1 /* Realm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +517,7 @@
 		};
 		E8A7F08325D7D587002487B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66BA86728692CAA8C9C1B4CB /* Pods-wordMemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +537,7 @@
 		};
 		E8A7F08425D7D587002487B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACDFBF7295F2A3A80FB70DF6 /* Pods-wordMemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
