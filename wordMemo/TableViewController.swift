@@ -44,7 +44,7 @@ class TableViewController: UIViewController, UITableViewDataSource {
             table.isEditing = false
             navigationItem.rightBarButtonItem?.title = "編集"
         }
-       }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wordArray.count
@@ -54,7 +54,12 @@ class TableViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordListTableViewCell") as! WordListTableViewCell
         cell.englishWord.text = wordArray[indexPath.row].english
         cell.wordCount.text = String(wordArray[indexPath.row].number)
+        cell.accessoryType = .detailButton
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        
     }
     
 

@@ -11,6 +11,7 @@ class WordListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var englishWord: UILabel!
     @IBOutlet weak var wordCount: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
