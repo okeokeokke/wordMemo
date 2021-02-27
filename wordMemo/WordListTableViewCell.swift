@@ -1,16 +1,16 @@
 //
-//  wordCountTableViewCell.swift
+//  WordListTableViewCell.swift
 //  wordMemo
 //
-//  Created by 桶本あいか on 2021/02/20.
+//  Created by 桶本あいか on 2021/02/27.
 //
 
 import UIKit
 
-class wordCountTableViewCell: UITableViewCell {
+class WordListTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var english: UIImageView!
-    @IBOutlet weak var count: UILabel!
+    @IBOutlet weak var englishWord: UILabel!
+    @IBOutlet weak var wordCount: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

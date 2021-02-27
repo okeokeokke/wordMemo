@@ -10,6 +10,7 @@ import RealmSwift
 
 class Word: Object{
     @objc dynamic var english: String = ""
-    @objc dynamic var wordCount: Int = 0
+    @objc dynamic var number: Int = 1
+//    @objc dynamic var japanese: String = ""
 
 }

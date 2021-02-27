@@ -16,19 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8CU-x7-hPJ">
-                                <rect key="frame" x="159" y="195" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDJ-S9-tac">
-                                <rect key="frame" x="192" y="433" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="保存"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6D-KK-QOI">
-                                <rect key="frame" x="192" y="334" width="31" height="30"/>
+                                <rect key="frame" x="192" y="239" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="追加"/>
                                 <connections>
@@ -40,24 +29,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="MKV-Yb-0bx"/>
-                    <connections>
-                        <outlet property="titleTextField" destination="8CU-x7-hPJ" id="bwZ-jV-P4a"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="93.75"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="yrO-K3-gp2">
+        <!--Table View Controller-->
+        <scene sceneID="H7a-AN-hnu">
             <objects>
-                <viewController id="gWx-6l-Dob" customClass="TableViewController" customModule="wordMemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="z37-84-r17">
+                <viewController id="yVc-RU-fq9" customClass="TableViewController" customModule="wordMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kPr-5B-DgJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="29b-eQ-GNg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -72,17 +58,17 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="OAR-ze-Bqm"/>
+                        <viewLayoutGuide key="safeArea" id="VWg-ze-jvH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="pbB-4E-6UG"/>
+                    <navigationItem key="navigationItem" id="2Dh-8Z-KGO"/>
                     <connections>
-                        <outlet property="table" destination="29b-eQ-GNg" id="VZy-fh-1Fa"/>
+                        <outlet property="table" destination="29b-eQ-GNg" id="3uU-GM-yNX"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dud-V2-SMM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqX-Ui-8gG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946.37681159420299" y="785.49107142857144"/>
+            <point key="canvasLocation" x="1831.8840579710147" y="884.59821428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="afC-xb-Hk9">
@@ -96,12 +82,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OVe-Vm-BnQ"/>
-                        <segue destination="gWx-6l-Dob" kind="relationship" relationship="viewControllers" id="PAo-b6-RKc"/>
+                        <segue destination="t45-5M-Szc" kind="relationship" relationship="viewControllers" id="IOd-Q7-R5P"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ove-hU-Yrh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="gFD-AG-k1U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t45-5M-Szc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="gKQ-6p-FvL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="quU-4r-uLg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yVc-RU-fq9" kind="relationship" relationship="rootViewController" id="84s-Gr-Pef"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ThA-pE-rxm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921.73913043478262" y="884.59821428571422"/>
         </scene>
     </scenes>
     <resources>

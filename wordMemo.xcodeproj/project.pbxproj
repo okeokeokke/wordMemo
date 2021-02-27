@@ -18,8 +18,8 @@
 		E8A7F07E25D7D587002487B1 /* wordMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F07D25D7D587002487B1 /* wordMemoUITests.swift */; };
 		E8A7F08F25D7D954002487B1 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F08E25D7D954002487B1 /* Realm.swift */; };
 		E8A7F09D25D7E3DD002487B1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F09C25D7E3DD002487B1 /* TableViewController.swift */; };
-		E8A7F0A325E11FB4002487B1 /* wordCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F0A125E11FB3002487B1 /* wordCountTableViewCell.swift */; };
-		E8A7F0A425E11FB4002487B1 /* wordCountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A7F0A225E11FB3002487B1 /* wordCountTableViewCell.xib */; };
+		E8A7F0AA25EA4AA1002487B1 /* WordListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F0A825EA4AA0002487B1 /* WordListTableViewCell.swift */; };
+		E8A7F0AB25EA4AA1002487B1 /* WordListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A7F0A925EA4AA0002487B1 /* WordListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +59,8 @@
 		E8A7F07F25D7D587002487B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8A7F08E25D7D954002487B1 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		E8A7F09C25D7E3DD002487B1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		E8A7F0A125E11FB3002487B1 /* wordCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordCountTableViewCell.swift; sourceTree = "<group>"; };
-		E8A7F0A225E11FB3002487B1 /* wordCountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = wordCountTableViewCell.xib; sourceTree = "<group>"; };
+		E8A7F0A825EA4AA0002487B1 /* WordListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListTableViewCell.swift; sourceTree = "<group>"; };
+		E8A7F0A925EA4AA0002487B1 /* WordListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +140,8 @@
 				E8A7F06425D7D587002487B1 /* Assets.xcassets */,
 				E8A7F06625D7D587002487B1 /* LaunchScreen.storyboard */,
 				E8A7F06925D7D587002487B1 /* Info.plist */,
-				E8A7F0A125E11FB3002487B1 /* wordCountTableViewCell.swift */,
-				E8A7F0A225E11FB3002487B1 /* wordCountTableViewCell.xib */,
+				E8A7F0A825EA4AA0002487B1 /* WordListTableViewCell.swift */,
+				E8A7F0A925EA4AA0002487B1 /* WordListTableViewCell.xib */,
 			);
 			path = wordMemo;
 			sourceTree = "<group>";
@@ -270,9 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8A7F06825D7D587002487B1 /* LaunchScreen.storyboard in Resources */,
+				E8A7F0AB25EA4AA1002487B1 /* WordListTableViewCell.xib in Resources */,
 				E8A7F06525D7D587002487B1 /* Assets.xcassets in Resources */,
 				E8A7F06325D7D57E002487B1 /* Main.storyboard in Resources */,
-				E8A7F0A425E11FB4002487B1 /* wordCountTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,8 +342,8 @@
 				E8A7F06025D7D57E002487B1 /* ViewController.swift in Sources */,
 				E8A7F05C25D7D57E002487B1 /* AppDelegate.swift in Sources */,
 				E8A7F05E25D7D57E002487B1 /* SceneDelegate.swift in Sources */,
-				E8A7F0A325E11FB4002487B1 /* wordCountTableViewCell.swift in Sources */,
 				E8A7F09D25D7E3DD002487B1 /* TableViewController.swift in Sources */,
+				E8A7F0AA25EA4AA1002487B1 /* WordListTableViewCell.swift in Sources */,
 				E8A7F08F25D7D954002487B1 /* Realm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleTextField.delegate = self
         // Do any additional setup after loading the view.
         wordArray = realm.objects(Word.self)
         print(wordArray)
@@ -27,7 +26,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @IBAction func plusWord(){
         var wordTextField = UITextField()
         let word = Word()
-        
+        wordTextField.keyboardType = .alphabet
         let addWord = UIAlertController(title: "単語名を入力", message: "", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
            
@@ -42,11 +41,13 @@ class ViewController: UIViewController, UITextFieldDelegate{
                 }
                 print("filter")
             } else {
-                results[0].wordCount += 1
-                print("else")
+                
+                try! self.realm.write {
+                    results[0].number += 1
+                    self.realm.add(results[0])
+                }
+              
             }
-        
-            print(word,"ワード")
         }
         let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (action) in
 //
