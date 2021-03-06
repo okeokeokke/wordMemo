@@ -7,14 +7,17 @@
 
 import UIKit
 
-class WordListTableViewCell: UITableViewCell {
+class WordListTableViewCell: UITableViewCell, UITextFieldDelegate {
     
-    @IBOutlet weak var englishWord: UILabel!
+    @IBOutlet weak var englishWord: UITextField!
     @IBOutlet weak var wordCount: UILabel!
+    
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        englishWord.delegate = self
+        
         // Initialization code
     }
 

@@ -20,6 +20,7 @@
 		E8A7F09D25D7E3DD002487B1 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F09C25D7E3DD002487B1 /* TableViewController.swift */; };
 		E8A7F0AA25EA4AA1002487B1 /* WordListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F0A825EA4AA0002487B1 /* WordListTableViewCell.swift */; };
 		E8A7F0AB25EA4AA1002487B1 /* WordListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A7F0A925EA4AA0002487B1 /* WordListTableViewCell.xib */; };
+		E8A7F0B625F38F7C002487B1 /* WordTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F0B525F38F7B002487B1 /* WordTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E8A7F09C25D7E3DD002487B1 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E8A7F0A825EA4AA0002487B1 /* WordListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListTableViewCell.swift; sourceTree = "<group>"; };
 		E8A7F0A925EA4AA0002487B1 /* WordListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordListTableViewCell.xib; sourceTree = "<group>"; };
+		E8A7F0B525F38F7B002487B1 /* WordTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				E8A7F06925D7D587002487B1 /* Info.plist */,
 				E8A7F0A825EA4AA0002487B1 /* WordListTableViewCell.swift */,
 				E8A7F0A925EA4AA0002487B1 /* WordListTableViewCell.xib */,
+				E8A7F0B525F38F7B002487B1 /* WordTestViewController.swift */,
 			);
 			path = wordMemo;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				E8A7F05C25D7D57E002487B1 /* AppDelegate.swift in Sources */,
 				E8A7F05E25D7D57E002487B1 /* SceneDelegate.swift in Sources */,
 				E8A7F09D25D7E3DD002487B1 /* TableViewController.swift in Sources */,
+				E8A7F0B625F38F7C002487B1 /* WordTestViewController.swift in Sources */,
 				E8A7F0AA25EA4AA1002487B1 /* WordListTableViewCell.swift in Sources */,
 				E8A7F08F25D7D954002487B1 /* Realm.swift in Sources */,
 			);

@@ -22,8 +22,8 @@ class TableViewController: UIViewController, UITableViewDataSource {
         wordArray = realm.objects(Word.self)
         table.register(UINib(nibName: "WordListTableViewCell", bundle: nil),forCellReuseIdentifier:"wordListTableViewCell")
         wordArray = wordArray.sorted(byKeyPath: "number", ascending: false)
-        navigationItem.rightBarButtonItem = editButtonItem
-        self.editButtonItem.title = "編集"
+//        navigationItem.rightBarButtonItem = editButtonItem
+//        self.editButtonItem.title = "編集"
 
         // Do any additional setup after loading the view.
     }
@@ -33,18 +33,18 @@ class TableViewController: UIViewController, UITableViewDataSource {
         table.reloadData()
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-           //override前の処理を継続してさせる
-           super.setEditing(editing, animated: animated)
-           //tableViewの編集モードを切り替える
-        if(self.isEditing){
-            table.isEditing = true
-            navigationItem.rightBarButtonItem?.title = "完了"
-        }else{
-            table.isEditing = false
-            navigationItem.rightBarButtonItem?.title = "編集"
-        }
-    }
+//    override func setEditing(_ editing: Bool, animated: Bool) {
+//           //override前の処理を継続してさせる
+//           super.setEditing(editing, animated: animated)
+//           //tableViewの編集モードを切り替える
+//        if(self.isEditing){
+//            table.isEditing = true
+//            navigationItem.rightBarButtonItem?.title = "完了"
+//        }else{
+//            table.isEditing = false
+//            navigationItem.rightBarButtonItem?.title = "編集"
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wordArray.count
@@ -54,9 +54,9 @@ class TableViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordListTableViewCell") as! WordListTableViewCell
         cell.englishWord.text = wordArray[indexPath.row].english
         cell.wordCount.text = String(wordArray[indexPath.row].number)
-        cell.accessoryType = .detailButton
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
