@@ -17,11 +17,13 @@ class WordListTableViewCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         englishWord.delegate = self
+        englishWord.isEnabled = true
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+//        var detailViewController = segue.destination as! DetailViewController
 
         // Configure the view for the selected state
     }

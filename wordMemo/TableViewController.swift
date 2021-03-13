@@ -10,9 +10,14 @@ import RealmSwift
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
+    
     let realm = try!Realm()
     var wordArray:Results<Word>!
     @IBOutlet var table: UITableView!
+    @IBOutlet var editButton: UIBarButtonItem!
+    
+    
     
     
 
@@ -24,6 +29,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         table.register(UINib(nibName: "WordListTableViewCell", bundle: nil),forCellReuseIdentifier:"wordListTableViewCell")
         wordArray = wordArray.sorted(byKeyPath: "number", ascending: false)
 //        navigationItem.rightBarButtonItem = editButtonItem
+//        navigationItem.rightBarButtonItem = editButtonItem
 //        self.editButtonItem.title = "編集"
 
         // Do any additional setup after loading the view.
@@ -34,25 +40,27 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         table.reloadData()
     }
     
-//    override func setEditing(_ editing: Bool, animated: Bool) {
-//           //override前の処理を継続してさせる
-//           super.setEditing(editing, animated: animated)
-//           //tableViewの編集モードを切り替える
-//        if(self.isEditing){
-//            table.isEditing = true
-//            navigationItem.rightBarButtonItem?.title = "完了"
-//        }else{
-//            table.isEditing = false
+    
+    @IBAction func setEditing() {
+        print("setEditingが押された")
+        if(table.isEditing){
+            table.isEditing = false
+            
+//            self.editButtonItem.title = "完了"
+        }else{
+            table.isEditing = true
+//            self.editButtonItem.title = "編集"
 //            navigationItem.rightBarButtonItem?.title = "編集"
-//        }
-//    }
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wordArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "wordListTableViewCell") as! WordListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! WordListTableViewCell
         cell.englishWord.text = wordArray[indexPath.row].english
         cell.wordCount.text = String(wordArray[indexPath.row].number)
 //        cell.accessoryType = .detailButton
@@ -60,14 +68,38 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool{
+            return true
+        }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //削除するだけなのでindexPath_row = indexPath.rowをする必要はない。
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let array = self.wordArray[indexPath.row]
+            var results  = self.realm.objects(Word.self)
+            results = results.filter("english =  '\(array.english)'")
+            do {
+                let realm = try Realm()
+                try! realm.write {
+                    realm.delete(results)
+                    realm.delete(array)
+                }
+            } catch {
+            }
+//            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            table.reloadData()
+        }
+    }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         performSegue(withIdentifier: "GoNext", sender: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "GoNext" {
+//            
+//        }
+//    }
     
 
     /*
@@ -81,3 +113,4 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     */
 
 }
+

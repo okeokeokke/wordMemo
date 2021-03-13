@@ -7,15 +7,17 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
     
-    
+    @IBOutlet var englishTextField: UITextField!
+    @IBOutlet var japaneseTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*
