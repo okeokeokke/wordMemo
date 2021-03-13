@@ -64,11 +64,42 @@
                     <navigationItem key="navigationItem" id="2Dh-8Z-KGO"/>
                     <connections>
                         <outlet property="table" destination="29b-eQ-GNg" id="3uU-GM-yNX"/>
+                        <segue destination="THb-8x-JPt" kind="modal" identifier="GoNext" id="4hZ-xk-QSO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wqX-Ui-8gG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1831.8840579710147" y="884.59821428571422"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="8p3-as-2sY">
+            <objects>
+                <viewController id="THb-8x-JPt" customClass="DetailViewController" customModule="wordMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YWa-5O-9n9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qq2-pf-2ie">
+                                <rect key="frame" x="159" y="235" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="123-Lh-iOE">
+                                <rect key="frame" x="159" y="409" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A2i-Zg-5gm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9OO-xw-nuw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HxU-e2-3TH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2664" y="885"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="afC-xb-Hk9">
@@ -112,8 +143,7 @@
         <!--Item-->
         <scene sceneID="a8f-qk-a6m">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qik-HN-Kg5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="91e-74-4gr" sceneMemberID="viewController">
+                <viewController id="91e-74-4gr" customClass="WordTestViewController" customModule="wordMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v7D-v3-cRU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,19 +159,25 @@
                                 <rect key="frame" x="80" y="482" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="覚えた"/>
+                                <connections>
+                                    <action selector="memorize" destination="91e-74-4gr" eventType="touchUpInside" id="ebk-eW-fmp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTm-Zh-7jS">
                                 <rect key="frame" x="254" y="482" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="覚えてない"/>
+                                <connections>
+                                    <action selector="notMemorize" destination="91e-74-4gr" eventType="touchUpInside" id="LA2-PX-kuR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hX0-me-QFm">
                                 <rect key="frame" x="171" y="367" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="日本語表示"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgH-ot-FKt">
-                                <rect key="frame" x="186" y="156" width="38" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgH-ot-FKt">
+                                <rect key="frame" x="108" y="158" width="208" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -152,7 +188,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Rmg-aL-wzc"/>
+                    <connections>
+                        <outlet property="no" destination="CTm-Zh-7jS" id="2GG-Sl-aE5"/>
+                        <outlet property="showJapanese" destination="hX0-me-QFm" id="fpa-Og-PPY"/>
+                        <outlet property="testEnglish" destination="BgH-ot-FKt" id="AV1-lA-7du"/>
+                        <outlet property="testJapanese" destination="2lK-8w-Ev4" id="JIi-LJ-KiZ"/>
+                        <outlet property="yes" destination="KXA-z8-Vh3" id="uQi-mC-HTH"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qik-HN-Kg5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="995.65217391304361" y="1631.9196428571429"/>
         </scene>

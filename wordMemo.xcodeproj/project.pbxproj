@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F383A75CE5C9FB4C546A177 /* Pods_wordMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC03FBB1F1D970CFAFACBF1 /* Pods_wordMemo.framework */; };
+		E8670EBB25FC5B6C00EA74B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8670EBA25FC5B6C00EA74B1 /* DetailViewController.swift */; };
 		E8A7F05C25D7D57E002487B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F05B25D7D57E002487B1 /* AppDelegate.swift */; };
 		E8A7F05E25D7D57E002487B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F05D25D7D57E002487B1 /* SceneDelegate.swift */; };
 		E8A7F06025D7D57E002487B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7F05F25D7D57E002487B1 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		66BA86728692CAA8C9C1B4CB /* Pods-wordMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wordMemo.debug.xcconfig"; path = "Target Support Files/Pods-wordMemo/Pods-wordMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6AC03FBB1F1D970CFAFACBF1 /* Pods_wordMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wordMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDFBF7295F2A3A80FB70DF6 /* Pods-wordMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wordMemo.release.xcconfig"; path = "Target Support Files/Pods-wordMemo/Pods-wordMemo.release.xcconfig"; sourceTree = "<group>"; };
+		E8670EBA25FC5B6C00EA74B1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E8A7F05825D7D57E002487B1 /* wordMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A7F05B25D7D57E002487B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8A7F05D25D7D57E002487B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				E8A7F0A825EA4AA0002487B1 /* WordListTableViewCell.swift */,
 				E8A7F0A925EA4AA0002487B1 /* WordListTableViewCell.xib */,
 				E8A7F0B525F38F7B002487B1 /* WordTestViewController.swift */,
+				E8670EBA25FC5B6C00EA74B1 /* DetailViewController.swift */,
 			);
 			path = wordMemo;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				E8A7F0B625F38F7C002487B1 /* WordTestViewController.swift in Sources */,
 				E8A7F0AA25EA4AA1002487B1 /* WordListTableViewCell.swift in Sources */,
 				E8A7F08F25D7D954002487B1 /* Realm.swift in Sources */,
+				E8670EBB25FC5B6C00EA74B1 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

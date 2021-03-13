@@ -44,6 +44,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
                 
                 try! self.realm.write {
                     results[0].number += 1
+                    results[0].status = 0
                     self.realm.add(results[0])
                 }
               

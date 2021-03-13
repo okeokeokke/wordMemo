@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class TableViewController: UIViewController, UITableViewDataSource {
+class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let realm = try!Realm()
     var wordArray:Results<Word>!
@@ -19,6 +19,7 @@ class TableViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
+        table.delegate = self
         wordArray = realm.objects(Word.self)
         table.register(UINib(nibName: "WordListTableViewCell", bundle: nil),forCellReuseIdentifier:"wordListTableViewCell")
         wordArray = wordArray.sorted(byKeyPath: "number", ascending: false)
@@ -54,13 +55,19 @@ class TableViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordListTableViewCell") as! WordListTableViewCell
         cell.englishWord.text = wordArray[indexPath.row].english
         cell.wordCount.text = String(wordArray[indexPath.row].number)
+        cell.accessoryType = .detailButton
+//        cell.accessoryType = UITableViewCell.AccessoryType.detailButton
         return cell
     }
     
     
+    
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "GoNext", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        }
     
 
     /*

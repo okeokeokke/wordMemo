@@ -17,7 +17,6 @@ class WordListTableViewCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         englishWord.delegate = self
-        
         // Initialization code
     }
 
