@@ -16,6 +16,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var wordArray:Results<Word>!
     @IBOutlet var table: UITableView!
     @IBOutlet var editButton: UIBarButtonItem!
+    var selectedItem: Word!
     
     
     
@@ -92,14 +93,19 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        selectedItem = wordArray[indexPath.row]
         performSegue(withIdentifier: "GoNext", sender: nil)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "GoNext" {
-//            
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoNext" {
+            var detailViewController = segue.destination as! DetailViewController
+            detailViewController.selectedItem = self.selectedItem
+            
+        }
+    }
+    
+
     
 
     /*

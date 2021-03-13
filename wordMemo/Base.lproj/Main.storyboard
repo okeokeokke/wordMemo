@@ -117,11 +117,35 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKL-u2-uWx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="wVr-Ud-7Xm">
+                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="7TW-X9-GIB">
+                                            <connections>
+                                                <action selector="cancelButton" destination="THb-8x-JPt" id="xeu-2t-Ysa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="ok" id="jZg-C9-ixH">
+                                            <connections>
+                                                <action selector="doneButton" destination="THb-8x-JPt" id="E6H-CY-uie"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A2i-Zg-5gm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="9OO-xw-nuw"/>
+                    <connections>
+                        <outlet property="cancel" destination="7TW-X9-GIB" id="bSB-ZU-gyi"/>
+                        <outlet property="done" destination="jZg-C9-ixH" id="8Wp-nL-eWD"/>
+                        <outlet property="englishTextField" destination="Qq2-pf-2ie" id="Dun-qR-w3Y"/>
+                        <outlet property="japaneseTextField" destination="123-Lh-iOE" id="Zdd-uR-eKA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HxU-e2-3TH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
