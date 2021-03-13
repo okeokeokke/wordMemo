@@ -55,7 +55,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordListTableViewCell") as! WordListTableViewCell
         cell.englishWord.text = wordArray[indexPath.row].english
         cell.wordCount.text = String(wordArray[indexPath.row].number)
-        cell.accessoryType = .detailButton
+//        cell.accessoryType = .detailButton
 //        cell.accessoryType = UITableViewCell.AccessoryType.detailButton
         return cell
     }
