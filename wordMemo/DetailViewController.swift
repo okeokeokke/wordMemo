@@ -26,7 +26,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         japaneseTextField.delegate = self
         wordArray = realm.objects(Word.self)
         wordArray = wordArray.sorted(byKeyPath: "number", ascending: false)
-        print(index)
+    
         
         // Do any additional setup after loading the view.
     }

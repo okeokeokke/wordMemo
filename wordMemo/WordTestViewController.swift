@@ -20,6 +20,7 @@ class WordTestViewController: UIViewController {
     var index: Int = 0
     var quantity: Int?
     var statusIndex: Int = 2
+    var japaneseStatus = true
     
 
 
@@ -48,10 +49,15 @@ class WordTestViewController: UIViewController {
         
     }
     
-    func perfect() {
-        if wordArray[index].status > 1  {
-            
+    @IBAction func validJapanese() {
+        if japaneseStatus == true {
+            showJapanese.setTitle("日本語表示", for: .normal)
+            japaneseStatus = false
+        } else {
+            showJapanese.setTitle("日本語非表示", for: .normal)
+            japaneseStatus = true
         }
+        textSet()
     }
     
     func delete() {
@@ -67,67 +73,63 @@ class WordTestViewController: UIViewController {
                 }
             } catch {
             }
+        } else {
+            try! self.realm.write {
+                wordArray[index].status += 1
+                self.realm.add(wordArray[index])
+            }
         }
     }
     
+    func textClear() {
+        testEnglish.text = ""
+        testJapanese.text = ""
+    }
+    
+    func textSet() {
+        if wordArray.count == 0{
+            textClear()
+        } else {
+            if japaneseStatus == true{
+                testEnglish.text = wordArray[index].english
+                testJapanese.text = wordArray[index].japanese
+            } else {
+                testEnglish.text = wordArray[index].english
+                testJapanese.text = ""
+            }
+        }
+    }
+    
+    func indexCount() {
+        if index < wordArray.count - 1 {
+            index += 1
+        }
+        else if index == wordArray.count - 1{
+            index = 0
+        }
+    }
     
     @IBAction func memorize() {
         if wordArray.count == 0 {
-            testEnglish.text = ""
-            testJapanese.text = ""
+            textClear()
         }else{
-            if wordArray[index].status > statusIndex{
-                let array = self.wordArray[index]
-                var results  = self.realm.objects(Word.self)
-                results = results.filter("english =  '\(array.english)'")
-                do {
-                    let realm = try Realm()
-                    try! realm.write {
-                        realm.delete(results)
-                        realm.delete(array)
-                    }
-                } catch {
-                }
-            } else {
-                try! self.realm.write {
-                    wordArray[index].status += 1
-                    self.realm.add(wordArray[index])
-                }
-            }
+            delete()
+            
             if wordArray.count == 0 {
-                testEnglish.text = ""
-                testJapanese.text = ""
+                textClear()
             } else {
-                if index < wordArray.count - 1 {
-                    index += 1
-                }
-                else if index == wordArray.count - 1{
-                    index = 0
-                }
-                testEnglish.text = wordArray[index].english
-                testJapanese.text = wordArray[index].japanese
+                indexCount()
+                textSet()
             }
         }
-        
-        
-        
-//        testEnglish.text = wordArray[index].english
-//        testJapanese.text = wordArray[index].japanese
     }
     
     @IBAction func notMemorize() {
         if wordArray.count == 0 {
-            testEnglish.text = ""
-            testJapanese.text = ""
+           textClear()
         }else{
-            if index < wordArray.count - 1 {
-                index += 1
-            }
-            else if index == wordArray.count - 1{
-                index = 0
-            }
-            testEnglish.text = wordArray[index].english
-            testJapanese.text = wordArray[index].japanese
+            indexCount()
+            textSet()
         }
         
     }

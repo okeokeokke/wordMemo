@@ -20,7 +20,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         wordArray = realm.objects(Word.self)
-        print(wordArray)
     }
     
 
@@ -34,13 +33,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
             var textWord = wordTextField.text!
             var results = self.realm.objects(Word.self)
             results = results.filter("english == '\(textWord)'")
-            print(results)
             if results.count == 0 {
                 word.english = textWord
                 try! self.realm.write {
                     self.realm.add(word)
                 }
-                print("filter")
             } else {
                 
                 try! self.realm.write {
@@ -61,9 +58,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
         addWord.addAction(cancel)
         addWord.addAction(ok)
         present(addWord, animated: true, completion: nil)
-        
-    }
-    @IBAction func addEnglishWord() {
         
     }
     

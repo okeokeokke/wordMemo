@@ -44,7 +44,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     @IBAction func setEditing() {
-        print("setEditingが押された")
         if(table.isEditing){
             table.isEditing = false
             
@@ -52,6 +51,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         }else{
             table.isEditing = true
             editButton.title = "完了"
+
 //            self.editButtonItem.title = "編集"
 //            navigationItem.rightBarButtonItem?.title = "編集"
         }
@@ -66,6 +66,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! WordListTableViewCell
         cell.englishWord.text = wordArray[indexPath.row].english
         cell.wordCount.text = String(wordArray[indexPath.row].number)
+//        if tableView.isEditing == true{
+//            cell.englishWord.isEnabled = true
+//        } else {
+//            cell.englishWord.isEnabled = false
+//        }
+        
 //        cell.accessoryType = .detailButton
 //        cell.accessoryType = UITableViewCell.AccessoryType.detailButton
         return cell
@@ -74,6 +80,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool{
             return true
         }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         //削除するだけなのでindexPath_row = indexPath.rowをする必要はない。
@@ -108,6 +115,14 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             
         }
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+            if tableView.isEditing == true{
+                return .delete
+            }else{
+                return .none
+            }
+        }
     
 
     
