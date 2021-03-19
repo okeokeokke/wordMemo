@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var cancel: UIBarButtonItem!
     var selectedItem: Word!
     var wordArray:Results<Word>!
+    var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         englishTextField.delegate = self
         japaneseTextField.delegate = self
         wordArray = realm.objects(Word.self)
-        
+        wordArray = wordArray.sorted(byKeyPath: "number", ascending: false)
+        print(index)
         
         // Do any additional setup after loading the view.
     }
@@ -49,14 +51,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func doneButton() {
         var results  = self.realm.objects(Word.self)
-        results = results.filter("english =  '\(selectedItem.english)'")
-        print("try前\(results)")
+//        var englishText = englishTextField.text!
+//        var japaneseText = japaneseTextField.text!
         try! self.realm.write {
-            results[0].english = englishTextField.text!
-            print("try中\(results)")
-            results[0].japanese = japaneseTextField.text!
-            
-            self.realm.add(results)
+            results[index].english = englishTextField.text!
+            results[index].japanese = japaneseTextField.text!
+            self.realm.add(results[index])
         }
         let tabVc = self.presentingViewController as! UITabBarController
         let navigationVc = tabVc.selectedViewController as! UINavigationController

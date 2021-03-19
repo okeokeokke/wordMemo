@@ -17,6 +17,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var table: UITableView!
     @IBOutlet var editButton: UIBarButtonItem!
     var selectedItem: Word!
+    var index: Int!
     
     
     
@@ -47,9 +48,10 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         if(table.isEditing){
             table.isEditing = false
             
-//            self.editButtonItem.title = "完了"
+            editButton.title = "編集"
         }else{
             table.isEditing = true
+            editButton.title = "完了"
 //            self.editButtonItem.title = "編集"
 //            navigationItem.rightBarButtonItem?.title = "編集"
         }
@@ -94,6 +96,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         selectedItem = wordArray[indexPath.row]
+        index = indexPath.row
         performSegue(withIdentifier: "GoNext", sender: nil)
     }
     
@@ -101,6 +104,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         if segue.identifier == "GoNext" {
             var detailViewController = segue.destination as! DetailViewController
             detailViewController.selectedItem = self.selectedItem
+            detailViewController.index = self.index
             
         }
     }

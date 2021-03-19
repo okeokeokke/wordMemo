@@ -42,9 +42,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="29b-eQ-GNg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="29b-eQ-GNg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" editingAccessoryType="detailButton" id="mqR-VA-Psi" customClass="WordListTableViewCell" customModule="wordMemo" customModuleProvider="target">
@@ -79,6 +78,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VWg-ze-jvH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="29b-eQ-GNg" firstAttribute="top" secondItem="kPr-5B-DgJ" secondAttribute="top" id="Hat-XF-dxc"/>
+                            <constraint firstItem="29b-eQ-GNg" firstAttribute="leading" secondItem="VWg-ze-jvH" secondAttribute="leading" id="XEg-nk-E3n"/>
+                            <constraint firstAttribute="bottom" secondItem="29b-eQ-GNg" secondAttribute="bottom" id="mVM-fT-eu2"/>
+                            <constraint firstItem="29b-eQ-GNg" firstAttribute="trailing" secondItem="VWg-ze-jvH" secondAttribute="trailing" id="vXI-T0-MRi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Dh-8Z-KGO">
                         <barButtonItem key="rightBarButtonItem" title="編集" id="54y-EV-bha">

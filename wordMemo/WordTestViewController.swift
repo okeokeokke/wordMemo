@@ -19,6 +19,7 @@ class WordTestViewController: UIViewController {
     @IBOutlet var showJapanese: UIButton!
     var index: Int = 0
     var quantity: Int?
+    var statusIndex: Int = 2
     
 
 
@@ -47,30 +48,88 @@ class WordTestViewController: UIViewController {
         
     }
     
+    func perfect() {
+        if wordArray[index].status > 1  {
+            
+        }
+    }
+    
+    func delete() {
+        if wordArray[index].status > statusIndex{
+            let array = self.wordArray[index]
+            var results  = self.realm.objects(Word.self)
+            results = results.filter("english =  '\(array.english)'")
+            do {
+                let realm = try Realm()
+                try! realm.write {
+                    realm.delete(results)
+                    realm.delete(array)
+                }
+            } catch {
+            }
+        }
+    }
+    
     
     @IBAction func memorize() {
-        try! self.realm.write {
-            wordArray[index].status += 1
-            self.realm.add(wordArray[index])
-        }
-        if index < wordArray.count - 1 {
-            index += 1
-        }
-        else if index == wordArray.count - 1{
-            index = 0
+        if wordArray.count == 0 {
+            testEnglish.text = ""
+            testJapanese.text = ""
+        }else{
+            if wordArray[index].status > statusIndex{
+                let array = self.wordArray[index]
+                var results  = self.realm.objects(Word.self)
+                results = results.filter("english =  '\(array.english)'")
+                do {
+                    let realm = try Realm()
+                    try! realm.write {
+                        realm.delete(results)
+                        realm.delete(array)
+                    }
+                } catch {
+                }
+            } else {
+                try! self.realm.write {
+                    wordArray[index].status += 1
+                    self.realm.add(wordArray[index])
+                }
+            }
+            if wordArray.count == 0 {
+                testEnglish.text = ""
+                testJapanese.text = ""
+            } else {
+                if index < wordArray.count - 1 {
+                    index += 1
+                }
+                else if index == wordArray.count - 1{
+                    index = 0
+                }
+                testEnglish.text = wordArray[index].english
+                testJapanese.text = wordArray[index].japanese
+            }
         }
         
-        testEnglish.text = wordArray[index].english
+        
+        
+//        testEnglish.text = wordArray[index].english
+//        testJapanese.text = wordArray[index].japanese
     }
     
     @IBAction func notMemorize() {
-        if index < wordArray.count - 1 {
-            index += 1
+        if wordArray.count == 0 {
+            testEnglish.text = ""
+            testJapanese.text = ""
+        }else{
+            if index < wordArray.count - 1 {
+                index += 1
+            }
+            else if index == wordArray.count - 1{
+                index = 0
+            }
+            testEnglish.text = wordArray[index].english
+            testJapanese.text = wordArray[index].japanese
         }
-        else if index == wordArray.count - 1{
-            index = 0
-        }
-        testEnglish.text = wordArray[index].english
+        
     }
     
 

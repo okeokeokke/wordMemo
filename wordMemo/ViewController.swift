@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     let realm = try!Realm()
     var wordArray:Results<Word>!
     @IBOutlet var titleTextField: UITextField!
+    
 
 
     override func viewDidLoad() {
