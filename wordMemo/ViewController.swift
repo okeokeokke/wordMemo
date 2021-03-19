@@ -14,22 +14,21 @@ class ViewController: UIViewController, UITextFieldDelegate{
     var wordArray:Results<Word>!
     @IBOutlet var titleTextField: UITextField!
     
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         wordArray = realm.objects(Word.self)
     }
     
-
+    
     @IBAction func plusWord(){
         var wordTextField = UITextField()
         let word = Word()
         wordTextField.keyboardType = .alphabet
         let addWord = UIAlertController(title: "単語名を入力", message: "", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
-           
             var textWord = wordTextField.text!
             var results = self.realm.objects(Word.self)
             results = results.filter("english == '\(textWord)'")
@@ -45,11 +44,12 @@ class ViewController: UIViewController, UITextFieldDelegate{
                     results[0].status = 0
                     self.realm.add(results[0])
                 }
-              
+                
             }
+            
         }
         let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (action) in
-//
+            //
         }
         addWord.addTextField { (textField) in
             textField.placeholder = "英単語"
@@ -69,7 +69,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
-
-
+    
+    
 }
 

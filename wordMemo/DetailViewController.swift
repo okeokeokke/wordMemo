@@ -26,6 +26,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         japaneseTextField.delegate = self
         wordArray = realm.objects(Word.self)
         wordArray = wordArray.sorted(byKeyPath: "number", ascending: false)
+        englishTextField.placeholder = "英語"
+        japaneseTextField.placeholder = "日本語"
     
         
         // Do any additional setup after loading the view.
