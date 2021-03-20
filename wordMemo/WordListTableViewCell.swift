@@ -17,6 +17,8 @@ class WordListTableViewCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         englishWord.delegate = self
+        
+        englishWord.isEnabled = false
 //        englishWord.isEnabled = true
         // Initialization code
     }
@@ -27,5 +29,12 @@ class WordListTableViewCell: UITableViewCell, UITextFieldDelegate {
 
         // Configure the view for the selected state
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
     
 }

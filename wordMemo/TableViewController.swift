@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     
     
@@ -22,7 +22,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
@@ -30,10 +30,10 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         wordArray = realm.objects(Word.self)
         table.register(UINib(nibName: "WordListTableViewCell", bundle: nil),forCellReuseIdentifier:"wordListTableViewCell")
         wordArray = wordArray.sorted(byKeyPath: "number", ascending: false)
-//        navigationItem.rightBarButtonItem = editButtonItem
-//        navigationItem.rightBarButtonItem = editButtonItem
-//        self.editButtonItem.title = "編集"
-
+        //        navigationItem.rightBarButtonItem = editButtonItem
+        //        navigationItem.rightBarButtonItem = editButtonItem
+        //        self.editButtonItem.title = "編集"
+        
         // Do any additional setup after loading the view.
     }
     
@@ -46,17 +46,18 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBAction func setEditing() {
         if(table.isEditing){
             table.isEditing = false
-            
             editButton.title = "編集"
+            
+            
         }else{
             table.isEditing = true
             editButton.title = "完了"
-
-//            self.editButtonItem.title = "編集"
-//            navigationItem.rightBarButtonItem?.title = "編集"
+           
+            //            self.editButtonItem.title = "編集"
+            //            navigationItem.rightBarButtonItem?.title = "編集"
         }
     }
-
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wordArray.count
@@ -72,14 +73,14 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 //            cell.englishWord.isEnabled = false
 //        }
         
-//        cell.accessoryType = .detailButton
-//        cell.accessoryType = UITableViewCell.AccessoryType.detailButton
+        //        cell.accessoryType = .detailButton
+        //        cell.accessoryType = UITableViewCell.AccessoryType.detailButton
         return cell
     }
     
     func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool{
-            return true
-        }
+        return true
+    }
     
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -96,7 +97,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
             } catch {
             }
-//            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            //            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
             table.reloadData()
         }
     }
@@ -117,25 +118,28 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-            if tableView.isEditing == true{
-                return .delete
-            }else{
-                return .none
-            }
+        if tableView.isEditing == true{
+            return .delete
+        }else{
+            return .none
         }
-    
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    
+    
+    
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
 
