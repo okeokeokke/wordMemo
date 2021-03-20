@@ -67,11 +67,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! WordListTableViewCell
         cell.englishWord.text = wordArray[indexPath.row].english
         cell.wordCount.text = String(wordArray[indexPath.row].number)
-//        if tableView.isEditing == true{
-//            cell.englishWord.isEnabled = true
-//        } else {
-//            cell.englishWord.isEnabled = false
-//        }
+        cell.englishWord.isEnabled = table.isEditing
         
         //        cell.accessoryType = .detailButton
         //        cell.accessoryType = UITableViewCell.AccessoryType.detailButton

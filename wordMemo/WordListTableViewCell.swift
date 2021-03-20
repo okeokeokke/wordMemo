@@ -12,14 +12,10 @@ class WordListTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var englishWord: UITextField!
     @IBOutlet weak var wordCount: UILabel!
     
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         englishWord.delegate = self
-        
-        englishWord.isEnabled = false
-//        englishWord.isEnabled = true
         // Initialization code
     }
 
